@@ -19,5 +19,19 @@ empty_array.include?("last")
 
 new_array=["cat", "cow", "dog"]
 array_variable= new_array + empty_array
-
 puts array_variable
+
+
+def take(x, y)
+	x.push(y)
+end
+p take([], 4)
+p take([], "craziness")
+p take([], "it is working")
+
+
+def returner(x, y, z)
+	empty = []
+	empty.push(x, y, z)
+end
+p returner("this is crazy", "I can't believe it works", "my head hurts")
