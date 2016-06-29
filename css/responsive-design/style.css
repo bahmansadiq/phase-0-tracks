@@ -1,3 +1,6 @@
+body{
+  max-width: 960px;
+}
 blockquote {
   border-left: 5px solid blue;
   padding: 15px;
@@ -8,10 +11,25 @@ cite {
   display: block;
   margin-top: 10px;
 }
+#external-links{
+  min-width: 20px;
+  max-width: 20%;
+display:inline-block;
+ vertical-align:middle;
+
+}
 
 #external-links ul {
   list-style-type: none;
   padding-left: 0px;
+}
+
+#additional-section{
+  min-width: 20px;
+  max-width: 90%;
+display:inline-block;
+ vertical-align:middle;
+
 }
 
 /* you're welcome to edit the
@@ -21,6 +39,14 @@ img {
   width: 100%;
 }
 
+main {
+  min-width: 220px;
+  max-width: 70%;
+  display:inline-block;
+ vertical-align:middle;
+
+  
+}
 figure {
   margin-left: 0px;
   margin-right: 0px;
@@ -29,4 +55,45 @@ figure {
 figcaption {
   font-style: italic;
   text-align: right;
+}
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+  #external-link {
+    max-width: 100%;
+    vertical-align: middle;
+
+  }
+  main{
+    vertical-align: middle;
+    max-width: 100%
+  }
+
+}
+
+@media screen and (max-width: 1000px){
+        #external-links{
+       
+        max-width: 20%;
+      display:inline-block;
+       vertical-align:middle;
+
+      }
+      main {
+        
+        max-width: 50%;
+        display:inline-block;
+       vertical-align:middle;
+
+        
+      }
+      #additional-section{
+        
+        max-width: 20%;
+      display:inline-block;
+       vertical-align:middle;
+
+      }
+
 }
