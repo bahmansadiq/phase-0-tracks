@@ -1,5 +1,6 @@
 class Animals
-	
+	attr_accessor :name
+	attr_reader :age
 	def initialize
 		puts" class initializer test"
 		@name="Cheetas"
@@ -10,9 +11,15 @@ class Animals
 		@name="white lion"
 		@catagory="wild life"
 		puts"  #{@name} is a #{@catagory} animal."
-	
-		
 	end
+
+	def breathe_fire
+
+	  puts "#{@name}  WHOOOOOOMPH! *sizzle*"
+    end 
+		
+	
+
 	def deer(name)
 		
 		puts"Deer does n't like #{@name}"
@@ -27,13 +34,40 @@ class Animals
 end
 
 
+puts" Do wish to play an instance ?"
 
 
-animal=Animals.new
-animal.lion
-animal.deer(@name)
-animal.monkey("100000sssss")
-
+		list_func=["lion", "breathe_fire", "deer","monkey"]
+	
+		answer=gets.chomp
+		
+		if answer=="yes"
+		
+				puts" Please choose one of the following #{list_func}"
+				choice=gets.chomp
+		 case choice
+			  when "lion"
+			  animal=Animals.new
+			  animal.lion
+			  
+			  when "breathe_fire"
+			  animal=Animals.new
+			  animal.breathe_fire
+			  
+			  when "deer"
+			  animal=Animals.new
+			  animal.deer(@name)
+			  
+			  when "monkey"
+			  animal=Animals.new
+			  animal.monkey("100")
+			  end 
+			  
+		  else
+		  	
+		puts" thank you"
+	end
+ 
 
 # Design a class of Animalls which has an initialize method will run every time Animal class is called
 # Initialize three instant variable to be accessed withing the class
