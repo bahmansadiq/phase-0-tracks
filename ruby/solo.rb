@@ -79,25 +79,3 @@ puts" Do wish to play an instance ?"
 # call each method of the class to test functionality 
 
 
-#Desing a class called Dragon
-#initialize method to run every time the class Dragon is called.
-# attr_reader and attr_accessor for two instance variables to read and read/write the variables outside the classs
-
-class Dragon
-	
-	attr_accessor :name
-	attr_reader :weapon
-	def initialize
-		puts" initializer test"
-		@name="Dragoooon"
-		@weapon="fire"
-    end
-	def breathe_fire
-  puts "#{@name}  WHOOOOOOMPH! *sizzle*"
-  end 
-end
-
-dragon=Dragon.new 
-dragon.breathe_fire
-dragon.name
-dragon.weapon
