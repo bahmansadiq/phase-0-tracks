@@ -1,3 +1,6 @@
+require_relative 'todo_list'
+
+
 describe TodoList do
   let(:list) { TodoList.new(["do the dishes", "mow the lawn"]) }
 
@@ -19,3 +22,17 @@ describe TodoList do
     expect(list.get_item(0)).to eq "do the dishes"
   end
 end
+
+
+
+
+#output :
+
+#Bsadiq@BSADIQ-LPT /c/devbootcamp/phase-0-tracks/ruby/list (attribute_6.3)
+#$ rspec todo_list_spec.rb
+#.....
+
+#Finished in 0.01 seconds (files took 0.13 seconds to load)
+#5 examples, 0 failures
+
+
