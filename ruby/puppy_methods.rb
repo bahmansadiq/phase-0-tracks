@@ -1,5 +1,5 @@
 class Puppy
-      def nitialize
+      def initialize
         puts" Initializing new puppy instances"
                 
       end
@@ -38,6 +38,17 @@ spot.dog_year(10)
 store = Puppy.new
 jordan= Puppy.new
 
+output:
+#Initializing new puppy instances
+#I brought back the shoe!
+#Woof
+#Woof
+#Woof
+#*roll over*
+ #Human year 10 is dog year 70
+ #Initializing new puppy instances
+ #Initializing new puppy instances
+
 class Kitty
   
   def initialize
@@ -54,13 +65,19 @@ class Kitty
     puts "I don't like dogs"
   end
 end
-my_array = ["Fluffy", "Lala", "Jo", "Cersei", "Berlin"]
 
 
-my_array.each do |e|
-  my_array = Kitty.new(e)
+index = 1
+kitty_array = []
+
+while index<=50 do 
+  kitty_array << Kitty.new
+    
+  index += 1
+end 
+
+kitty_array.each do |list|
+  list.milk
+  list.dogs
 end
-
-
-
   
