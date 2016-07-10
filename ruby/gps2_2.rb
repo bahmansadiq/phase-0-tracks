@@ -36,7 +36,6 @@
 items = 'carrots apples cereal pizza'
 empty_hash = {}
 
-
 def create_list(items)
   each_item = {}
   food = items.split(' ')
