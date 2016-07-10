@@ -28,11 +28,11 @@ end
 
 #output :
 
-#Bsadiq@BSADIQ-LPT /c/devbootcamp/phase-0-tracks/ruby/list (attribute_6.3)
+#Bsadiq@BSADIQ-LPT /c/devbootcamp/phase-0-tracks/ruby/list (pairing_6.6)
 #$ rspec todo_list_spec.rb
-#.....
+#....
 
-#Finished in 0.01 seconds (files took 0.13 seconds to load)
-#5 examples, 0 failures
+#Finished in 0 seconds (files took 0.14 seconds to load)
+#4 examples, 0 failures
 
 
