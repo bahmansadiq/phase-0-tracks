@@ -30,3 +30,24 @@ findLongestWord();
 // save the pair values which are equal in both the lists and print it
 
 
+
+
+var list1 = {name: "Tamir", age: 54, hight: 72, weight: 89};
+var list2 = {name: "Raja", age: 60, hight: 10, weight: 72};
+function comp(para1, para2){
+
+for(var i in list1) {
+	for( var j in list2)
+    if (list1[i]==list2[j]) {
+    	console.log("the matching pair value in the lists", list1);
+ 
+       	console.log("and  ", list2);
+       	   	console.log (i, list1[i])
+        console.log(j, list2[j])
+	
+    }
+    
+}
+
+}
+comp(list1, list2);
