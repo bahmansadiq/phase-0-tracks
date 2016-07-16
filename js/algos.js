@@ -21,7 +21,7 @@ for(var i=0; i < array.length; i++ )
 
 findLongestWord();
 
-//release 1:
+//release 1: Find a Key-Value Match
 
 // Define a funtion which takes two object lists as a parameters
 // Declare the lists
@@ -36,18 +36,28 @@ var list1 = {name: "Tamir", age: 54, hight: 72, weight: 89};
 var list2 = {name: "Raja", age: 60, hight: 10, weight: 72};
 function comp(para1, para2){
 
-for(var i in list1) {
-	for( var j in list2)
-    if (list1[i]==list2[j]) {
-    	console.log("the matching pair value in the lists", list1);
- 
-       	console.log("and  ", list2);
-       	   	console.log (i, list1[i])
-        console.log(j, list2[j])
-	
-    }
-    
-}
+	for(var i in list1) {
+		for( var j in list2)
+			    if (list1[i]==list2[j]) {
+			    	console.log("the matching pair value in the lists", list1);
+			       	console.log("and  ", list2);
+			       	console.log (i, list1[i]);
+			        console.log(j, list2[j]);
+				    }
+	}
 
 }
 comp(list1, list2);
+
+//release 2: Generate Random Test Data
+//Write a function that takes an integer for length, and builds and returns an array of strings of the given length. 
+function randString(x){
+    var str = "";
+    while(str.length<10 &&x>1){
+        var r = Math.random();
+        str+= String.fromCharCode(Math.floor(r*26) + (r>0.5?97:65));
+    }
+    return str;
+}
+
+randString(5)
