@@ -51,13 +51,29 @@ comp(list1, list2);
 
 //release 2: Generate Random Test Data
 //Write a function that takes an integer for length, and builds and returns an array of strings of the given length. 
-function randString(x){
-    var str = "";
-    while(str.length<10 &&x>1){
-        var r = Math.random();
-        str+= String.fromCharCode(Math.floor(r*26) + (r>0.5?97:65));
-    }
-    return str;
-}
 
-randString(5)
+//release 2: Generate Random Test Data
+//Write a function that takes an integer for length, and builds and returns an array of strings of the given length. 
+// function takes an integer and use it as a length in condition
+// create list of characters which we choose word of the given length
+// use built in methods to create these random word
+// store it the result in a variable and return the result
+// create a for loop to call the function 10 times and store all 10 words in an array 
+ function randomString(length) {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    for(var i = 0; i < length; i++) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    return text;
+}
+ var all=new Array();
+	
+	for(var i=0;i<=10; i++){
+	stor_random=randomString(3);
+	 all[i]=stor_random;
+ }
+ console.log(all);
+
+
+
