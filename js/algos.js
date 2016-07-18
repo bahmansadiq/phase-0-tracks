@@ -1,25 +1,4 @@
-// release 0:
-// write a funtion to return the longest word in the array:
-// define a funtion to take an array as an argument
-// interate inside the array find the length of each item of array
-// set a maxword to one of the array items temporary;
-// compare  length of each item in the array with maxword
-//any item in the array has length bigger thean maxword is going to replace maxword value 
-// return the longest length(maxwor) to the function
-// 
-function findLongestWord(word) {
-var array = ["long  phrase","longest phrase","longer phrase"];
-var maxword=array[0];
-for(var i=0; i < array.length; i++ )
-         {
-         if(array[i].length > maxword.length) maxword = array[i];
-	
-         }
-    return maxword;
-	
-}
 
-findLongestWord();
 
 //release 1: Find a Key-Value Match
 
@@ -51,14 +30,12 @@ comp(list1, list2);
 
 //release 2: Generate Random Test Data
 //Write a function that takes an integer for length, and builds and returns an array of strings of the given length. 
-
-//release 2: Generate Random Test Data
-//Write a function that takes an integer for length, and builds and returns an array of strings of the given length. 
 // function takes an integer and use it as a length in condition
 // create list of characters which we choose word of the given length
 // use built in methods to create these random word
 // store it the result in a variable and return the result
 // create a for loop to call the function 10 times and store all 10 words in an array 
+
  function randomString(length) {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -76,4 +53,29 @@ comp(list1, list2);
  console.log(all);
 
 
+// release 0:
+// write a funtion to return the longest word in the array:
+// define a funtion to take an array as an argument
+// interate inside the array find the length of each item of array
+// set a maxword to one of the array items temporary;
+// compare  length of each item in the array with maxword
+//any item in the array has length bigger thean maxword is going to replace maxword value 
+// return the longest length(maxwor) to the function
+//
+var array = ["long  phrase","longest phrase","longer phrase"];
+function findLongestWord(word) {
 
+	var maxword=word[0];
+	for(var i=0; i < word.length; i++ )
+	         {
+	         if(word[i].length > maxword.length)
+	         maxword = word[i];
+		
+	         }
+	    return maxword;
+	
+}
+
+console.log("the longest phrase is:");
+
+console.log(findLongestWord(all));
