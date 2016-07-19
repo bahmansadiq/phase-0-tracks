@@ -1,0 +1,251 @@
+##Release 1
+## Part 1
+Bsadiq@BSADIQ-LPT /c/devbootcamp/phase-0-tracks/databases/solo_project (solochanllenge_8.3_branch)
+$ sqlite3
+SQLite version 3.8.7.2 2014-11-18 20:57:56
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database.
+
+
+### Release 1
+## part 2
+
+##### Create the database file with extention .db
+sqlite> .open airline_managements.db
+
+
+#### Create first table Passengers with different datatypes and Primary key and foreign key
+
+sqlite> create table passengers ( ticketno int  primary key, name varchar, dob int, address varchar, dest varchar, flightcode int, foreign key (flightcode
+ references flights(flightcode));
+
+sqlite> select * from passengers;
+
+
+### Insert data into Passengers table#####################
+
+sqlite> insert into passengers ( ticketno, name , dob , address , dest, flightcode) values (1001, "Zack", 040189, "San Diego", "New York", 500);
+sqlite> insert into passengers ( ticketno, name , dob , address , dest, flightcode) values (1002, "John", 040199, "San Francisco", "D.C", 520);
+sqlite> insert into passengers ( ticketno, name , dob , address , dest, flightcode) values (1003, "Nasim", 040180, "France", "Delhi", 590);
+sqlite> insert into passengers ( ticketno, name , dob , address , dest, flightcode) values (1004, "George", 040171, "San Diego", "Kabul", 500);
+sqlite> insert into passengers ( ticketno, name , dob , address , dest, flightcode) values (1005, "Adam", 040189, "San Diego", "New York", 500);
+sqlite> select * from passengers
+   ...> select * from passengers;
+Error: near "select": syntax error
+sqlite> select * from passengers;
+1001|Zack|40189|San Diego|New York|500
+1002|John|40199|San Francisco|D.C|520
+1003|Nasim|40180|France|Delhi|590
+1004|George|40171|San Diego|Kabul|500
+1005|Adam|40189|San Diego|New York|500
+sqlite> git branch
+   ...>
+
+
+#### Add and Commit the changes to Git workflow###########################
+Bsadiq@BSADIQ-LPT /c/devbootcamp/phase-0-tracks/databases/solo_project (solochanllenge_8.3_branch)
+$ git branch
+  gps3.1_branch
+  intro_database_branch
+  javascript_7.1_branch
+  master
+  solochallenge_7.3_branch
+* solochanllenge_8.3_branch
+
+Bsadiq@BSADIQ-LPT /c/devbootcamp/phase-0-tracks/databases/solo_project (solochanllenge_8.3_branch)
+$ git status
+On branch solochanllenge_8.3_branch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        airline_managements.db
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Bsadiq@BSADIQ-LPT /c/devbootcamp/phase-0-tracks/databases/solo_project (solochanllenge_8.3_branch)
+$ git add airline_managements.db
+
+Bsadiq@BSADIQ-LPT /c/devbootcamp/phase-0-tracks/databases/solo_project (solochanllenge_8.3_branch)
+$ git status
+On branch solochanllenge_8.3_branch
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   airline_managements.db
+
+
+Bsadiq@BSADIQ-LPT /c/devbootcamp/phase-0-tracks/databases/solo_project (solochanllenge_8.3_branch)
+$ git commit -m" Add Passengers table with properties included primary key and
+foreign key"
+[solochanllenge_8.3_branch 206b863]  Add Passengers table with properties included primary key and foreign key
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 databases/solo_project/airline_managements.db
+
+Bsadiq@BSADIQ-LPT /c/devbootcamp/phase-0-tracks/databases/solo_project (solochanllenge_8.3_branch)
+$ pwd
+/c/devbootcamp/phase-0-tracks/databases/solo_project
+
+Bsadiq@BSADIQ-LPT /c/devbootcamp/phase-0-tracks/databases/solo_project (solochanllenge_8.3_branch)
+$ sqlite3
+SQLite version 3.8.7.2 2014-11-18 20:57:56
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database.
+
+### Create the second table flights#################3
+sqlite> creat table flights( flightcode int primary key, air_name varchar, capacity int);
+Error: near "creat": syntax error
+sqlite> create table flights( flightcode int primary key, air_name varchar, capacity int);
+
+######## insert data into flight table##############
+sqlite> insert into flights( flightcode, air_name, capacity) values (500, "Delta", 250);
+sqlite> insert into flights( flightcode, air_name, capacity) values (520, "USS", 500);
+sqlite> insert into flights( flightcode, air_name, capacity) values (590, "Delta", 320);
+
+
+
+
+## Release 2
+
+# display the content of tables###############
+
+
+sqlite> select * from flights
+   ...> select * from flights;
+
+
+  # list the tables
+Error: near "select": syntax error
+sqlite> select * from flights;
+500|Delta|250
+520|USS|500
+590|Delta|320
+sqlite>
+
+
+sqlite> select * from passengers;
+1001|Zack|40189|San Diego|New York|500
+1002|John|40199|San Francisco|D.C|520
+1003|Nasim|40180|France|Delhi|590
+1004|George|40171|San Diego|Kabul|500
+1005|Adam|40189|San Diego|New York|500
+sqlite>
+
+##############part 2
+## Update the table information############
+sqlite> update  passengers set dob=111191 where name="Nasim";
+sqlite> select * from passengers;
+1001|Zack|40189|San Diego|New York|500
+1002|John|40199|San Francisco|D.C|520
+1003|Nasim|111191|France|Delhi|590
+1004|George|40171|San Diego|Kabul|500
+1005|Adam|40189|San Diego|New York|500
+sqlite>
+
+
+######       part 3
+sqlite> select * from passengers, flights;
+1001|Zack|40189|San Diego|New York|500|500|Delta|250
+1001|Zack|40189|San Diego|New York|500|520|USS|500
+1001|Zack|40189|San Diego|New York|500|590|Delta|320
+1002|John|40199|San Francisco|D.C|520|500|Delta|250
+1002|John|40199|San Francisco|D.C|520|520|USS|500
+1002|John|40199|San Francisco|D.C|520|590|Delta|320
+1003|Nasim|111191|France|Delhi|590|500|Delta|250
+1003|Nasim|111191|France|Delhi|590|520|USS|500
+1003|Nasim|111191|France|Delhi|590|590|Delta|320
+1004|George|40171|San Diego|Kabul|500|500|Delta|250
+1004|George|40171|San Diego|Kabul|500|520|USS|500
+1004|George|40171|San Diego|Kabul|500|590|Delta|320
+1005|Adam|40189|San Diego|New York|500|500|Delta|250
+1005|Adam|40189|San Diego|New York|500|520|USS|500
+1005|Adam|40189|San Diego|New York|500|590|Delta|320
+
+
+
+###Part 4:
+###Display a narrower selection of columns #######
+sqlite> select name from passengers;
+name
+Zack
+John
+George
+Adam
+sqlite>
+sqlite> select flightcode from passengers;
+flightcode
+500
+520
+500
+500
+sqlite>
+
+
+###Release 2:
+@@Part 5:
+### Delete an item that meets some conditio:
+sqlite> delete from passengers where name="Nasim";
+sqlite> select * from passengers;
+ticketno|name|dob|address|dest|flightcode
+1001|Zack|40189|San Diego|New York|500
+1002|John|40199|San Francisco|D.C|520
+1004|George|40171|San Diego|Kabul|500
+1005|Adam|40189|San Diego|New York|500
+sqlite>
+
+
+####Release 3:
+
+
+#####Join:
+
+ ##inner join(simple join)
+ # It joins two tables when they have a common column, as we have flightcode in common here
+sqlite> select passengers.name, passengers.dob, passengers.dest
+   ...> from passengers inner join flights
+   ...> on passengers.flightcode=flights.flightcode;
+name|dob|dest
+Zack|40189|New York
+John|40199|D.C
+George|40171|Kabul
+Adam|40189|New York
+sqlite>
+
+sqlite> select passengers.name, passengers.dob, flights.capacity
+   ...> from passengers join flights
+   ...> on passengers.flightcode=flights.flightcode;
+name|dob|capacity
+Zack|40189|250
+John|40199|500
+George|40171|250
+Adam|40189|250
+sqlite>
+
+
+sqlite> .schema
+CREATE TABLE passengers ( ticketno int  primary key, name varchar, dob int, address varchar, dest varchar, flightcode int, foreign key (flightcode) referen
+ces flights(flightcode));
+CREATE TABLE flights( flightcode int primary key, air_name varchar, capacity int);
+sqlite>
+
+
+
+### left join
+## The LEFT JOIN keyword returns all rows from the left table (passengers), with the matching rows in the right table (flights). 
+
+sqlite> select passengers.name, passengers.dob, flights.capacity
+   ...> from passengers left join flights
+   ...> on passengers.flightcode=flights.flightcode;
+name|dob|capacity
+Zack|40189|250
+John|40199|500
+George|40171|250
+Adam|40189|250
+
+### right join
+sqlite> select passengers.name, passengers.dob, flights.capacity
+   ...> from passengers right  join flights
+   ...> on passengers.flightcode=flights.flightcode;
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+sqlite>
