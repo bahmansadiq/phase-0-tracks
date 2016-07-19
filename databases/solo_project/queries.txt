@@ -1,0 +1,100 @@
+Bsadiq@BSADIQ-LPT /c/devbootcamp/phase-0-tracks/databases/solo_project (solochanllenge_8.3_branch)
+$ sqlite3
+SQLite version 3.8.7.2 2014-11-18 20:57:56
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database.
+sqlite> .open airline_managements.db
+
+sqlite> create table passengers ( ticketno int  primary key, name varchar, dob int, address varchar, dest varchar, flightcode int, foreign key (flightcode
+ references flights(flightcode));
+sqlite> select * from passengers
+   ...> select * from passengers;
+Error: near "select": syntax error
+sqlite> select * from passengers;
+sqlite> insert into passengers ( ticketno, name , dob , address , dest, flightcode) values (1001, "Zack", 040189, "San Diego", "New York", 500);
+sqlite> select * from passengers
+   ...> select * from passengers;
+Error: near "select": syntax error
+sqlite> select * from passengers;
+1001|Zack|40189|San Diego|New York|500
+sqlite> insert into passengers ( ticketno, name , dob , address , dest, flightcode) values (1002, "John", 040199, "San Francisco", "D.C", 520);
+sqlite> insert into passengers ( ticketno, name , dob , address , dest, flightcode) values (1003, "Nasim", 040180, "France", "Delhi", 590);
+sqlite> insert into passengers ( ticketno, name , dob , address , dest, flightcode) values (1004, "George", 040171, "San Diego", "Kabul", 500);
+sqlite> insert into passengers ( ticketno, name , dob , address , dest, flightcode) values (1005, "Adam", 040189, "San Diego", "New York", 500);
+sqlite> select * from passengers
+   ...> select * from passengers;
+Error: near "select": syntax error
+sqlite> select * from passengers;
+1001|Zack|40189|San Diego|New York|500
+1002|John|40199|San Francisco|D.C|520
+1003|Nasim|40180|France|Delhi|590
+1004|George|40171|San Diego|Kabul|500
+1005|Adam|40189|San Diego|New York|500
+sqlite> git branch
+   ...>
+
+
+Bsadiq@BSADIQ-LPT /c/devbootcamp/phase-0-tracks/databases/solo_project (solochanllenge_8.3_branch)
+$ git branch
+  gps3.1_branch
+  intro_database_branch
+  javascript_7.1_branch
+  master
+  solochallenge_7.3_branch
+* solochanllenge_8.3_branch
+
+Bsadiq@BSADIQ-LPT /c/devbootcamp/phase-0-tracks/databases/solo_project (solochanllenge_8.3_branch)
+$ git status
+On branch solochanllenge_8.3_branch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        airline_managements.db
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Bsadiq@BSADIQ-LPT /c/devbootcamp/phase-0-tracks/databases/solo_project (solochanllenge_8.3_branch)
+$ git add airline_managements.db
+
+Bsadiq@BSADIQ-LPT /c/devbootcamp/phase-0-tracks/databases/solo_project (solochanllenge_8.3_branch)
+$ git status
+On branch solochanllenge_8.3_branch
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   airline_managements.db
+
+
+Bsadiq@BSADIQ-LPT /c/devbootcamp/phase-0-tracks/databases/solo_project (solochanllenge_8.3_branch)
+$ git commit -m" Add Passengers table with properties included primary key and
+foreign key"
+[solochanllenge_8.3_branch 206b863]  Add Passengers table with properties included primary key and foreign key
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 databases/solo_project/airline_managements.db
+
+Bsadiq@BSADIQ-LPT /c/devbootcamp/phase-0-tracks/databases/solo_project (solochanllenge_8.3_branch)
+$ pwd
+/c/devbootcamp/phase-0-tracks/databases/solo_project
+
+Bsadiq@BSADIQ-LPT /c/devbootcamp/phase-0-tracks/databases/solo_project (solochanllenge_8.3_branch)
+$ sqlite3
+SQLite version 3.8.7.2 2014-11-18 20:57:56
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database.
+sqlite> creat table flights( flightcode int primary key, air_name varchar, capacity int);
+Error: near "creat": syntax error
+sqlite> create table flights( flightcode int primary key, air_name varchar, capacity int);
+sqlite> insert into flights( flightcode, air_name, capacity) values (500, "Delta", 250);
+sqlite> insert into flights( flightcode, air_name, capacity) values (520, "USS", 500);
+sqlite> insert into flights( flightcode, air_name, capacity) values (590, "Delta", 320);
+sqlite> select * from flights
+   ...> select * from flights;
+Error: near "select": syntax error
+sqlite> select * from flights;
+500|Delta|250
+520|USS|500
+590|Delta|320
+sqlite>
+
