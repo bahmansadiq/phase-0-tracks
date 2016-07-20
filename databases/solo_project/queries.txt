@@ -249,3 +249,42 @@ sqlite> select passengers.name, passengers.dob, flights.capacity
    ...> on passengers.flightcode=flights.flightcode;
 Error: RIGHT and FULL OUTER JOINs are not currently supported
 sqlite>
+
+
+
+extra worok
+#### Checking my primary key and foreign key ####
+sqlite> .open airline_managements.db
+sqlite> .table
+flights     passengers
+sqlite> select * from flights;
+500|Delta|250
+520|USS|500
+590|Delta|320
+sqlite> select  * from passengers;
+1001|Zack|40189|San Diego|New York|500
+1002|John|40199|San Francisco|D.C|520
+1004|George|40171|San Diego|Kabul|500
+1005|Adam|40189|San Diego|New York|500
+sqlite> update into passengers values(1006, "Bahman", 040298,"Kabul", "Faizabad",53);
+Error: near "into": syntax error
+sqlite> insert into passengers values(1006, "Bahman", 040298,"Kabul", "Faizabad",53);
+sqlite> select * from passengers;
+1001|Zack|40189|San Diego|New York|500
+1002|John|40199|San Francisco|D.C|520
+1004|George|40171|San Diego|Kabul|500
+1005|Adam|40189|San Diego|New York|500
+1006|Bahman|40298|Kabul|Faizabad|53
+sqlite> update passengers set flightcode=530 where name="Bahman";
+sqlite> select * from passengers;
+1001|Zack|40189|San Diego|New York|500
+1002|John|40199|San Francisco|D.C|520
+1004|George|40171|San Diego|Kabul|500
+1005|Adam|40189|San Diego|New York|500
+1006|Bahman|40298|Kabul|Faizabad|530
+sqlite> select flightcode from passengers;
+500
+520
+500
+500
+530
